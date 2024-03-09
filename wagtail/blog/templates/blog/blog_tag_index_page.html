@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center">Blog Posts</h2>
+        {% if request.GET.tag %}
+          <h4 class="text-center">Showing pages tagged "{{ request.GET.tag }}"</h4>
+        {% endif %}
+
+        {% for blogpage in blogpages %}
+          <div class="card mb-4">
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="{% pageurl blogpage %}">{{ blogpage.title }}</a>
+              </h4>
+              <p class="card-text">
+                <small>Revised: {{ blogpage.latest_revision_created_at }}</small>
+              </p>
+            </div>
+          </div>
+        {% empty %}
+          <p class="text-center">No pages found with that tag.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      color: #007bff;
+    }
+
+    .card-text small {
+      color: #777;
+    }
+  </style>
+{% endblock %}

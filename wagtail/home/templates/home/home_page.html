@@ -1,0 +1,415 @@
+{% extends "base.html" %} 
+{% load wagtailcore_tags %} 
+{% block body_class%}template-homepage{% endblock %} 
+{% block content %}
+
+<style>
+  body {
+    font-family: fantasy;
+    box-shadow: 1px black;
+    background-image: url("media/original_images/maxresdefault.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+  }
+
+  .content-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .home_text {
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 100px;
+    font-family: fantasy;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .social-networks {
+    filter: brightness(0) invert(1);
+    width: 30px;
+    margin-left: 10px;
+  }
+
+  .ticket-circle {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .image-container:hover .image-overlay {
+    opacity: 1;
+  }
+
+  .overlay-text {
+    color: white;
+    font-size: 20px;
+  }
+
+  .circle, .anothercircle {
+    border: 2px solid #333;
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  }
+
+  .circle:hover {
+    background-color: #333;
+    color: white;
+    border-color: white;
+  }
+
+  .anothercircle:hover {
+    background-color: white;
+    color: #333;
+    border-color: #333;
+  }
+
+  footer {
+    background-color: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  #a:hover {
+    color: #ffcc00;
+  }
+
+  #scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+  }
+
+</style>
+
+<div class="col-12" style="background-color: black;">
+  <div class="row col-12" style="padding-left: 15px">
+    <div class="col-2 image-container">
+      <img
+        src="media/original_images/40_cent.jpeg"
+        class="img-fluid"
+        style="object-fit: cover; width: 100%; height: 200px"
+        alt="50 cent"
+      />
+      <div class="image-overlay">
+        <p class="overlay-text">50 Cent</p>
+      </div>
+    </div>
+    <div class="col-2 image-container">
+      <img
+        src="media/original_images/biggie.jpg"
+        class="img-fluid"
+        style="object-fit: cover; width: 100%; height: 200px"
+        alt="Biggie"
+      />
+      <div class="image-overlay">
+        <p class="overlay-text">The notorious B.I.G</p>
+      </div>
+    </div>
+    <div class="col-2 image-container">
+      <img
+        src="media/original_images/eminem.jpg"
+        class="img-fluid"
+        style="object-fit: cover; width: 100%; height: 200px"
+        alt="Eminem"
+      />
+      <div class="image-overlay">
+        <p class="overlay-text">Eminem</p>
+      </div>
+    </div>
+    <div class="col-2 image-container">
+      <img
+        src="media/original_images/ice_cube.jpg"
+        class="img-fluid"
+        style="object-fit: cover; width: 100%; height: 200px"
+        alt="Ice cube"
+      />
+      <div class="image-overlay">
+        <p class="overlay-text">Ice Cube</p>
+      </div>
+    </div>
+    <div class="col-2 image-container">
+      <img
+        src="media/original_images/2pac.jpg"
+        class="img-fluid"
+        style="object-fit: cover; width: 100%; height: 200px"
+        alt="2pac"
+      />
+      <div class="image-overlay">
+        <p class="overlay-text">2pac</p>
+      </div>
+    </div>
+    <div class="col-2 image-container">
+      <img
+        src="media/original_images/dr_dre.jpg"
+        class="img-fluid"
+        style="object-fit: cover; width: 100%; height: 200px"
+        alt="Dr dre"
+      />
+      <div class="image-overlay"> 
+        <p class="overlay-text">Dr. Dre</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="background-image">
+  <div class="home_text" style="-webkit-text-stroke: 1px black">
+    {{ page.body|richtext }}
+  </div>
+  <div
+    class="home_text"
+    style="font-size: 25px; padding-top: 0px; -webkit-text-stroke: 1px black"
+  >
+    {{ page.information|richtext }}
+  </div>
+
+  <div
+    class="container-expanded"
+    style="
+      background-color: rgb(46, 46, 46);
+      text-align: center;
+      margin-top: 350px;
+      padding-top: 40px;
+      padding-bottom: 20px;
+    "
+  >
+    <h1>About us</h1>
+    <div class="col-12" style="padding-bottom: 10px">
+      <div class="row col-12" style="padding-left: 20px">
+        <div
+          class="col-4 image-container"
+          style="padding: 40px; position: relative; overflow: hidden"
+        >
+          <div style="position: relative; background: rgba(0, 0, 0, 0.5)">
+            <img
+              src="media\original_images\rap.jpeg"
+              class="rounded img-fluid " style="object-fit: cover; width: 100%; height: 350px; filter: brightness(0.4); "
+              alt="..."
+            />
+          </div>
+          <div
+            class="text"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;
+            "
+          >
+            Rap
+          </div>
+        </div>
+        <div
+          class="col-4 image-container"
+          style="padding: 40px; position: relative; overflow: hidden"
+        >
+          <div style="position: relative; background: rgba(0, 0, 0, 0.5)">
+            <img
+              src="media\original_images\hiphop.jpg"
+              class="rounded img-fluid " style="object-fit: cover; width: 100%; height: 350px; filter: brightness(0.4); "
+              alt="..."
+            />
+          </div>
+          <div
+            class="text"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;
+            "
+          >
+            Hip Hop
+          </div>
+        </div>
+        <div
+          class="col-4 image-container"
+          style="padding: 40px; position: relative; overflow: hidden"
+        >
+          <div style="position: relative; background: rgba(0, 0, 0, 0.5)">
+            <img
+              src="media\original_images\art.jpg"
+              class="rounded img-fluid " style="object-fit: cover; width: 100%; height: 350px; filter: brightness(0.4); "
+              alt="..."
+            />
+          </div>
+          <div
+            class="text"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;
+            "
+          >
+            Art
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="row col-12" style="padding-left: 20px">
+        <div
+          class="col-4 image-container"
+          style="padding: 40px; position: relative; overflow: hidden"
+        >
+          <div style="position: relative; background: rgba(0, 0, 0, 0.5)">
+            <img
+              src="media\original_images\underground.jpg"
+              class="rounded img-fluid " style="object-fit: cover; width: 100%; height: 350px; filter: brightness(0.4); "
+              alt="..."
+            />
+          </div>
+          <div
+            class="text"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;
+            "
+          >
+            Underground
+          </div>
+        </div>
+        <div
+          class="col-4 image-container"
+          style="padding: 40px; position: relative; overflow: hidden"
+        >
+          <div style="position: relative; background: rgba(0, 0, 0, 0.5)">
+            <img
+              src="media\original_images\rap.jpg"
+              class="rounded img-fluid " style="object-fit: cover; width: 100%; height: 350px; filter: brightness(0.4); "
+              alt="..."
+            />
+          </div>
+          <div
+            class="text"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;
+            "
+          >
+            Stories
+          </div>
+        </div>
+        <div
+          class="col-4 image-container"
+          style="padding: 40px; position: relative; overflow: hidden"
+        >
+          <div style="position: relative; background: rgba(0, 0, 0, 0.5)">
+            <img
+              src="media\original_images\west_and_east.jpeg"
+              class="rounded img-fluid " style="object-fit: cover; width: 100%; height: 350px; filter: brightness(0.4); "
+              alt="..."
+            />
+          </div>
+          <div
+            class="text"
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 30px;
+            "
+          >
+            Westside & Eastside
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row col-12 justify-content-center my-4">
+      <div class="circle col-6 d-flex align-items-center justify-content-center" style="margin-right: 10px; height: 300px; width: 300px; border-radius: 50%; overflow: hidden;">
+        <div class="text" style="font-size: 30px; color: black;">Contact us</div>
+      </div>
+      <div class="anothercircle col-6 d-flex align-items-center justify-content-center" style="margin-left: 10px; height: 300px; width: 300px; border-radius: 50%; overflow: hidden;">
+        <div class="text" style="font-size: 30px; color: white;"><a href="{{ BASE_URL }}/blog" style="text-decoration: none; color: white;">Our Blog</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2023 RapSite | All rights reserved</p>
+  <p>Contacto: <a href="mailto:info@tusitioweb.com" id="a">andres@gmail.com</a></p>
+</footer>
+
+<div id="scroll-to-top">↑ Volver arriba</div>
+
+<script>
+  // Aparecer/desaparecer el botón "Volver arriba" al hacer scroll
+  window.addEventListener('scroll', function() {
+    var scrollTopButton = document.getElementById('scroll-to-top');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollTopButton.style.display = 'block';
+    } else {
+      scrollTopButton.style.display = 'none';
+    }
+  });
+
+  // Scroll suave al hacer clic en el botón "Volver arriba"
+  document.getElementById('scroll-to-top').addEventListener('click', function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+</script>
+
+{% endblock content %}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BLESSD</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="./static/media/icon-blessd.jpeg" type="image/x-icon" />
+    <!-- Enlaces a estilos externos -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .mySlides {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación superior -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <!-- Icono de menú para pantallas pequeñas -->
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+            <!-- Enlaces de navegación -->
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">INICIO</a>
+            <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EL BENDITO</a>
+            <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GIRAS</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
+        </div>
+    </div>
+
+    <!-- Barra de navegación para pantallas pequeñas -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+        style="margin-top: 46px">
+        <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">EL BENDITO</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">GIRAS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACTO</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="w3-content" style="max-width: 2000px; margin-top: 46px">
+        <!-- Imagen destacada con texto -->
+        <div class="w3-display-container w3-center">
+            <img src="./static/media/blessd3.jpg" style="width: 100%" />
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                <h3>La mejor disquera</h3>
+                <p><b>Warner Music Latina</b></p>
+            </div>
+        </div>
+
+        <!-- Sección sobre "El Bendito" -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px" id="band">
+            <h2 class="w3-wide">EL BENDITO</h2>
+            <p class="w3-justify">
+                ¡Prepárate para una noche inolvidable llena de flow y buena música! El
+                talentoso cantante Blessd, conocido por éxitos como "Medallo", "Quien
+                tv", "Instagram" y más. No te pierdas la oportunidad de vivir una
+                experiencia única con su magistral actuación en vivo. ¡Asegura tu
+                lugar y no te pierdas a Blessd en concierto!
+            </p>
+            <!-- Imágenes y descripciones de ciudades -->
+            <div class="w3-row w3-padding-32">
+                <div class="w3-third">
+                    <p>Cali</p>
+                    <div class="image-container" style="width: 60%; height: 200px; overflow: hidden">
+                        <img src="./static/media/cali.jpg" class="w3-round w3-margin-bottom" alt="Cali"
+                            style="width: 100%; height: 100%; object-fit: cover" />
+                    </div>
+                </div>
+                <div class="w3-third">
+                    <p>Chicago</p>
+                    <div class="image-container" style="width: 60%; height: 200px; overflow: hidden">
+                        <img src="./static/media/chicago.jpg" class="w3-round w3-margin-bottom" alt="Chicago"
+                            style="width: 100%; height: 100%; object-fit: cover" />
+                    </div>
+                </div>
+                <div class="w3-third">
+                    <p>Medallo</p>
+                    <div class="image-container" style="width: 60%; height: 200px; overflow: hidden">
+                        <img src="./static/media/medallo.jpg" class="w3-round" alt="Medallo"
+                            style="width: 100%; height: 100%; object-fit: cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección sobre las giras -->
+        <div class="w3-black" id="tour">
+            <div class="w3-container w3-content w3-padding-64" style="max-width: 800px">
+                <h2 class="w3-wide w3-center">GIRAS</h2>
+                <p class="w3-opacity w3-center">
+                    <i>¡Recuerda comprar tus boletas!</i>
+                </p>
+                <br />
+                <!-- Lista de fechas de giras -->
+                <ul class="w3-ul w3-border w3-white w3-text-grey">
+                    <li class="w3-padding">
+                        Noviembre
+                        <span class="w3-tag w3-red w3-margin-left">Sold out</span>
+                    </li>
+                    <li class="w3-padding">
+                        Diciembre
+                        <span class="w3-tag w3-red w3-margin-left">Sold out</span>
+                    </li>
+                    <li class="w3-padding">
+                        Enero <span class="w3-badge w3-right w3-margin-right">3</span>
+                    </li>
+                </ul>
+                <!-- Detalles de las giras -->
+                <div class="w3-row-padding w3-padding-32" style="margin: 0 -16px">
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="./static/media/Bogota-city.jpeg" alt="Bogotá"
+                            style="width: 100%; object-fit: cover; height: 200px" class="w3-hover-opacity" />
+                        <div class="w3-container w3-white">
+                            <p><b>Bogotá</b></p>
+                            <p class="w3-opacity">Vie 5 Ene 2024</p>
+                            <p>Teatro Jorge Eliecer Gaitan.</p>
+                            <button class="w3-button w3-black w3-margin-bottom"
+                                onclick="document.getElementById('ticketModal').style.display='block'">
+                                Comprar Boleta
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="./static/media/Pasto-city.jpeg" alt="Paris"
+                            style="width: 100%; object-fit: cover; height: 200px" class="w3-hover-opacity" />
+                        <div class="w3-container w3-white">
+                            <p><b>Pasto</b></p>
+                            <p class="w3-opacity">Mie 10 Ene 2024</p>
+                            <p>Parque cultura Simon Bolivar</p>
+                            <button class="w3-button w3-black w3-margin-bottom"
+                                onclick="document.getElementById('ticketModal').style.display='block'">
+                                Comprar Boleta
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="./static/media/Medellin-city.jpg" alt="San Francisco"
+                            style="width: 100%; object-fit: cover; height: 200px" class="w3-hover-opacity" />
+                        <div class="w3-container w3-white">
+                            <p><b>Medellín</b></p>
+                            <p class="w3-opacity">Mar 16 Ene 2024</p>
+                            <p>Plaza central de Antioquia</p>
+                            <button class="w3-button w3-black w3-margin-bottom"
+                                onclick="document.getElementById('ticketModal').style.display='block'">
+                                Comprar Boleta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para la compra de boletas -->
+        <div id="ticketModal" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-blue w3-center w3-padding-32">
+                    <!-- Botón para cerrar el modal -->
+                    <span onclick="document.getElementById('ticketModal').style.display='none'"
+                        class="w3-button w3-blue w3-xlarge w3-display-topright">×</span>
+                    <h2 class="w3-wide">
+                        <i class="fa fa-suitcase w3-margin-right"></i>Boletas
+                    </h2>
+                </header>
+                <div class="w3-container">
+                    <p>
+                        <label><i class="fa fa-shopping-cart"></i> Boletas, $150.000.00 por
+                            persona</label>
+                    </p>
+                    <input class="w3-input w3-border" type="text" placeholder="¿Cúantas?" />
+                    <p>
+                        <label><i class="fa fa-user"></i> Enviar a</label>
+                    </p>
+                    <input class="w3-input w3-border" type="text" placeholder="Ingresa tú correo electronico" />
+                    <button class="w3-button w3-block w3-blue w3-padding-16 w3-section w3-right">
+                        PAGAR <i class="fa fa-check"></i>
+                    </button>
+                    <button class="w3-button w3-red w3-section"
+                        onclick="document.getElementById('ticketModal').style.display='none'">
+                        VOLVER<i class="fa fa-remove"></i>
+                    </button>
+                    <p class="w3-right">
+                        NECESITAS <a href="#" class="w3-text-blue">AYUDA?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de contacto -->
+        <div class="w3-container w3-content w3-padding-64" style="max-width: 800px" id="contact">
+            <h2 class="w3-wide w3-center">CONTACTANOS</h2>
+            <p class="w3-opacity w3-center"><i>¿Quedaste con dudas?</i></p>
+            <div class="w3-row w3-padding-32">
+                <div class="w3-col m6 w3-large w3-margin-bottom">
+                    <i class="fa fa-map-marker" style="width: 30px"></i> Medellín, CO<br />
+                    <i class="fa fa-phone" style="width: 30px"></i> Phone: +57
+                    3012717380<br />
+                    <i class="fa fa-envelope" style="width: 30px"> </i> Email:
+                    andresfelipecvs@hotmail.com<br />
+                </div>
+                <div class="w3-col m6">
+                    <!-- Formulario de contacto -->
+                    <form action="" target="_blank">
+                        <div class="w3-row-padding" style="margin: 0 -16px 8px -16px">
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Nombre" required
+                                    name="Nombre" />
+                            </div>
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Correo" required
+                                    name="Correo" />
+                            </div>
+                        </div>
+                        <input class="w3-input w3-border" type="text" placeholder="Mensaje a enviar" required
+                            name="Mensaje a enviar" />
+                        <button class="w3-button w3-black w3-section w3-right" type="submit">
+                            ENVIAR
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Imagen de fondo para el footer -->
+    <img src="./static/media/footer.jpg" class="w3-image w3-greyscale-min"
+        style="width: 100%; object-fit: cover; height: 500px" />
+
+    <!-- Footer con enlaces a redes sociales -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+    </footer>
+
+    <script>
+        function myFunction() {
+            // Función para mostrar/ocultar la barra de navegación en pantallas pequeñas
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        var modal = document.getElementById("ticketModal");
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>

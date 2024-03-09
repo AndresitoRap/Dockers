@@ -1,0 +1,431 @@
+body {
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-image: url("img/BackgroundCat.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  transition: background-size 0.1s ease;
+}
+
+header {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 30px;
+  padding-inline-end: 100px;
+}
+
+.title {
+  font-size: 1em;
+  background-color: rgb(14, 9, 92);
+  padding: 0px 0px 0px 0px;
+  margin-left: 30px;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+}
+
+.title h1 {
+  padding: 0px 10px 0px 10px;
+}
+
+.options {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.options span {
+  margin-left: 10px;
+  position: relative;
+}
+
+.options span h1,
+.options span .info {
+  padding: 20px 30px;
+  background-color: rgb(14, 9, 92);
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-width: 200px;
+  max-height: 250px;
+  box-sizing: border-box;
+}
+
+.options span h1 {
+  margin: 0;
+}
+
+.options span .info {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0, 162, 255);
+  color: black;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.options span:hover h1 {
+  background-color: rgb(0, 162, 255);
+  color: black;
+  border-radius: 0;
+}
+
+.options span:hover .info {
+  opacity: 1;
+}
+
+.body_text {
+  color: white;
+  position: relative;
+  padding-inline-start: 30px;
+  margin-left: 40px;
+  margin-block: 200px;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.box-intro {
+  margin-top: 38%;
+  background-color: white;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  height: 300px;
+  width: 230px;
+  position: relative;
+  top: -100px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(14, 9, 92, 0.795);
+  transition: background-color 0.3s ease;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: transparent;
+}
+
+.card:hover:before {
+  background-color: transparent;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card .text-info-card {
+  font-size: 15px;
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  transform: translate(-50%, -80%);
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .text-info-card {
+  opacity: 0;
+}
+
+.info-intro {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+  font-size: 20px;
+  height: 400px;
+}
+
+.info-intro h3,
+.info-intro h2 {
+  display: block;
+}
+
+.info-intro h5 {
+  color: rgb(7, 7, 124);
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.info-intro a {
+  background-color: rgb(0, 162, 255);
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+  transition: background-color, color 0.3s ease;
+}
+
+.info-intro a:hover {
+  background-color: rgb(14, 9, 92);
+  color: white;
+}
+
+.section-image-info {
+  position: relative;
+}
+
+.section-image {
+  background-color: white;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.section-image img {
+  border-radius: 30px;
+  display: block;
+}
+
+.section-image:hover img {
+  filter: brightness(60%);
+  transition: ease 0.9s;
+}
+
+.upimage3D {
+  position: absolute;
+  top: 40%;
+  left: 65%;
+  z-index: 1; /* Asegura que esta imagen se superponga sobre la otra */
+}
+
+.body-info {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+}
+.body-info h1 {
+  display: block;
+}
+
+.body-info img {
+  display: inline-flex;
+}
+
+.card-corporation {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.795);
+  width: 300px;
+  height: 200px;
+  position: relative;
+  top: 150px;
+  left: 10px;
+}
+
+.info-enterprises {
+  display: flex;
+  justify-content: space-around;
+}
+
+.enterprise {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.entry-foundation {
+  background-image: url(/static/img/CatFoundation.jpg);
+  margin: 0;
+  background-size: 100%;
+  padding: 10px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+.entry-foundation h1, .entry-foundation h2 {
+  margin-top: 30px;
+  color: black;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.fondation-enter {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.theheart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.heart {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: rgb(192, 30, 44);
+  transform: rotate(-45deg);
+  box-shadow: -10px 10px 90px rgb(192, 30, 44);
+  animation: animate 0.6s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(-45deg) scale(1.07);
+  }
+  80% {
+    transform: rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: rotate(-45deg) scale(0.8);
+  }
+}
+
+.heart::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: rgb(192, 30, 44);
+  border-radius: 50%;
+  box-shadow: -10px -10px 90px rgb(192, 30, 44);
+}
+
+.heart::after {
+  content: "";
+  position: absolute;
+  right: -50%;
+  width: 70px;
+  height: 70px;
+  background: rgb(192, 30, 44);
+  border-radius: 50%;
+  box-shadow: 10px 10px 90px rgb(192, 30, 44);
+}
+
+.entry-foundation a {
+  background-color: rgb(0, 162, 255);
+  padding: 20px;
+  margin-left: -350px;
+  border-radius: 10px;
+  color: black;
+  transition: background-color, color 0.3s ease;
+}
+
+.entry-foundation a:hover {
+  background-color: rgb(14, 9, 92);
+  color: white;
+}
+
+.footer {
+  height: 590px;
+  background-color: rgb(14, 9, 92);
+  color: white;
+  position: relative;
+  align-items: center;
+  text-align: center;
+}
+
+.name {
+  margin-left: 600px;
+  margin-right: 600px;
+  background-color: white;
+  padding-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 10px;
+  color: rgb(14, 9, 92);
+}
+
+.text-finally {
+  padding-top: 10px;
+  font-size: 26px;
+  padding-right: 90px;
+  padding-left: 90px;
+
+  .line {
+    background-color: white;
+    width: 100%;
+    height: 1px;
+  }
+}
+
+.contenido {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  padding-inline-start: 400px;
+  padding-inline-end: 400px;
+}
+
+.contenido a {
+  text-decoration: none;
+  color: white;
+}
+
+.contenido a:hover {
+  color: black;
+}
+
+.contenido .span h5 {
+  display: block;
+  font-weight: 100;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
